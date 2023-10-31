@@ -9,6 +9,8 @@ public class AccountPage {
 
     // Define your locators at the top of the class
     By myAccountLink = By.linkText("MY ACCOUNT");
+
+
     By createAccountLink = By.linkText("CREATE AN ACCOUNT");
     By firstNameInputLocator = By.id("firstname");
     By lastNameInputLocator = By.id("lastname");
@@ -16,12 +18,15 @@ public class AccountPage {
     By passwordInputLocator = By.id("password");
     By confirmPasswordInputLocator = By.id("confirmation");
     By registerButton = By.xpath("//button[@title='Register']");
+
     By tvMenuLink = By.linkText("TV");
     By addToWishlistLink = By.xpath("//a[@title='LG LCD']//following::a[@class='link-wishlist']");
     By shareWishlistButton = By.name("save_and_share");
     By emailInput = By.id("email_address");
     By messageInput = By.id("message");
     By shareWishlistSubmitButton = By.xpath("//button[@title='Share Wishlist']");
+
+
 
     public AccountPage(WebDriver driver) {
         this.driver = driver;
@@ -53,6 +58,7 @@ public class AccountPage {
         emailElement.clear();
         emailElement.sendKeys(email);
     }
+
 
     public void enterPassword(String password) {
         WebElement passwordElement = driver.findElement(passwordInputLocator);
