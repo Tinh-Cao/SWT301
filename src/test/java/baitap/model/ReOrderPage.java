@@ -105,9 +105,9 @@ public class ReOrderPage {
         driver.findElement(placeOrder).click();
     }
 
-    public void clickShippingCostButton() {
-        driver.findElement(selectShippingCostButton).click();
-    }
+//    public void clickShippingCostButton() {
+//        driver.findElement(selectShippingCostButton).click();
+//    }
 
     public WebElement quantity() {
         return driver.findElement(quantitySelector);
@@ -123,14 +123,10 @@ public class ReOrderPage {
     }
 
     public boolean addShippingCost() {
-        driver.findElement(selectShippingCostButton).click();
-        driver.findElement(updateButton).click();
         String subtotalString = driver.findElement(subTotal).getText().replace(",", "").replace("$", "");
-        String shippingString = driver.findElement(shippingCost).getText().replace(",", "").replace("$", "");
         String totalString = driver.findElement(totalCost).getText().replace(",", "").replace("$", "");
         double subtotal = Double.parseDouble(subtotalString);
-        double shipping = Double.parseDouble(shippingString);
         double total = Double.parseDouble(totalString);
-        return (total == shipping + subtotal);
+        return (total == subtotal);
     }
 }

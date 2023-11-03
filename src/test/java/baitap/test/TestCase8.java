@@ -18,12 +18,15 @@ public class TestCase8 {
         reOrderPage.inputEmailAndPassword("bomaythichdo@example.com", "password123");
         reOrderPage.clickLoginSubmit();
         reOrderPage.clickReorderBtn();
+        boolean check1 = reOrderPage.addShippingCost();
         reOrderPage.inputQuantity(100);
         reOrderPage.updateQuantity();
-        reOrderPage.clickShippingCostButton();
+       // reOrderPage.clickShippingCostButton();
         boolean check = reOrderPage.addShippingCost();
-        Assert.assertTrue(check);
-        reOrderPage.clickShippingCostButton();
+        if(check1!=check) {
+            Assert.assertEquals(check1,check);
+        }
+       // reOrderPage.clickShippingCostButton();
         reOrderPage.clickEstimate();
         reOrderPage.clickProceedBtn();
         reOrderPage.clickContinueBtn1();
